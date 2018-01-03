@@ -1,5 +1,9 @@
-rm -rf /work/n02/n02/mmuetz/python3_libs/lib/python3.4/site-packages/
-rm -rf /work/n02/n02/mmuetz/python3_libs
+if [ -z "$LIBDIR" ]; then
+    echo "Need to set LIBDIR"
+    exit 1
+fi  
+
+rm -rf $LIBDIR
 
 rm -rf biggus
 rm -rf cartopy
