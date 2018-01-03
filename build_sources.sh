@@ -1,10 +1,15 @@
-echo Using LIBDIR: $LIBDIR
+if [ -z "$LIBDIR" ]; then
+    echo "Need to set LIBDIR"
+    exit 1
+fi  
 
 mkdir -p $LIBDIR/lib/python3.4/site-packages/
 export PATH=$PATH:$LIBDIR/usr/local/bin/
 export PYTHONPATH=$PYTHONPATH:$LIBDIR/lib/python3.4/site-packages/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBDIR/usr/local/lib
 export CFLAGS="-I$LIBDIR/usr/local/include"
+
+cd src/
 
 cd biggus/
 python3 setup.py install --prefix=$LIBDIR
@@ -56,4 +61,6 @@ cd ..
 cd iris/
 git checkout v1.13.0
 python3 setup.py install --prefix=$LIBDIR
+cd ..
+
 cd ..
