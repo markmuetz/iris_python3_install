@@ -1,5 +1,9 @@
 cd src
 
+tar xvf blas-3.8.0.tgz
+tar xvf lapack-3.8.0.tar.gz
+tar xvf numpy-1.13.3.tar.gz
+
 unzip pyke-1.1.1.zip 
 
 tar xvf udunits-2.2.25.tar.gz 

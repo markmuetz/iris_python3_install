@@ -4,12 +4,30 @@ if [ -z "$LIBDIR" ]; then
 fi  
 
 mkdir -p $LIBDIR/lib/python3.4/site-packages/
+mkdir -p $LIBDIR/usr/local/lib
+
 export PATH=$PATH:$LIBDIR/usr/local/bin/
 export PYTHONPATH=$PYTHONPATH:$LIBDIR/lib/python3.4/site-packages/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBDIR/usr/local/lib
 export CFLAGS="-I$LIBDIR/usr/local/include"
 
 cd src/
+
+#cd BLAS-3.8.0
+#make
+#cp blas_LINUX.a $LIBDIR/usr/local/lib/libblas.a
+#cd ..
+
+cd lapack-3.8.0
+cp make.inc.example make.inc
+make lib
+cp lib*.a $LIBDIR/usr/local/lib/
+cp $LIBDIR/usr/local/lib/librefblas.a $LIBDIR/usr/local/lib/libblas.a 
+cd ..
+
+cd numpy-1.13.3/
+python3 setup.py install --prefix=$LIBDIR
+cd ..
 
 cd biggus/
 python3 setup.py install --prefix=$LIBDIR

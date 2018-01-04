@@ -8,6 +8,11 @@ git clone https://github.com/SciTools/cartopy.git
 git clone https://github.com/SciTools/cf_units.git
 git clone https://github.com/SciTools/iris.git
 
+wget http://www.netlib.org/blas/blas-3.8.0.tgz
+wget http://www.netlib.org/lapack/lapack-3.8.0.tar.gz
+
+wget https://github.com/numpy/numpy/releases/download/v1.13.3/numpy-1.13.3.tar.gz -O numpy-1.13.3.tar.gz
+
 wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.2.25.tar.gz
 # wget https://sourceforge.net/projects/pyke/files/latest/download
 # wget --no-check-certificate https://sourceforge.net/projects/pyke/files/latest/download
