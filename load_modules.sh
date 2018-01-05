@@ -1,5 +1,4 @@
 module swap PrgEnv-cray/5.2.82 PrgEnv-intel/5.1.29
-module unload xalt
 module load python-compute/3.4.3
 module load pc-numpy/1.9.2-mkl-python3
 module load pc-scipy/0.15.1-mkl-python3

@@ -4,10 +4,6 @@ if [ -z "$LIBDIR" ]; then
 fi  
 
 mkdir -p $LIBDIR/lib/python3.4/site-packages/
-export PATH=$PATH:$LIBDIR/usr/local/bin/
-export PYTHONPATH=$PYTHONPATH:$LIBDIR/lib/python3.4/site-packages/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBDIR/usr/local/lib
-export CFLAGS="-I$LIBDIR/usr/local/include"
 
 cd src/
 
@@ -52,6 +48,11 @@ cd proj-4.9.3/
 make
 make install
 cd ..
+
+cd Shapely-1.6.3/
+python3 setup.py install --prefix=$LIBDIR
+cd ..
+
 
 cd cartopy/
 ldconfig
