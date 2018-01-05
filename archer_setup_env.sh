@@ -1,4 +1,4 @@
-export LIBDIR=/work/n02/n02/mmuetz/python3_libs
+export LIBDIR=/work/n02/n02/mmuetz/python3_libs_clean_build
 
 export PATH=$PATH:$LIBDIR/usr/local/bin/
 export PYTHONPATH=$PYTHONPATH:$LIBDIR/lib/python3.4/site-packages/
